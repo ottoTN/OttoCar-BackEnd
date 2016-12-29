@@ -5,6 +5,7 @@ namespace GarageBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class CompteType extends AbstractType
 {
@@ -13,7 +14,9 @@ class CompteType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nomprop')->add('prenomprop')->add('telprop')->add('adresseprop')->add('mailprop')->add('modelevoit')->add('marquevoit')->add('immatvoit')->add('cinprop')        ;
+        $builder->add('nomprop')->add('prenomprop')->add('telprop')->add('adresseprop')->add('mailprop')->add('modelevoit',ChoiceType::class, [
+    'choices' => []])->add('marquevoit',ChoiceType::class, [
+    'choices' => []])->add('immatvoit')->add('cinprop')        ;
     }
     
     /**

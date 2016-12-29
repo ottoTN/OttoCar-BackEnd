@@ -4,7 +4,7 @@ $(document).ready(function(){
 	$('input[type=checkbox],input[type=radio],input[type=file]').uniform();
 	
 	$('select').select2();
-    $('.colorpicker').colorpicker();
+    /*$('.colorpicker').colorpicker();*/
     $('.datepicker').datepicker();
 
     $("#ficheLink").click(function(){
@@ -56,7 +56,7 @@ $(document).ready(function() {
 	}
 
 	//------------- Masked input fields -------------//
-	$("#mask-phone").mask("(99) 999-999");
+	$("#garagebundle_compte_telprop").mask("(99) 999-999");
 	$("#mask-phoneExt").mask("(999) 999-9999? x99999");
 	$("#mask-phoneInt").mask("+40 999 999 999");
 	$("#mask-date").mask("99/99/9999");
@@ -64,7 +64,7 @@ $(document).ready(function() {
 	$("#mask-productKey").mask("a*-999-a999", { placeholder: "*" });
 	$("#mask-eyeScript").mask("~9.99 ~9.99 999");
 	$("#mask-percent").mask("99%");
-	$("#mask-plate").mask("999 TUN 9999");
+	$("#garagebundle_compte_immatvoit").mask("999 TUN 9999");
 
 	//------------- Toggle button  -------------//
 
@@ -104,7 +104,7 @@ $(document).ready(function() {
     });
 
 	//------------- Colorpicker -------------//
-	if($('div').hasClass('picker')){
+	/*if($('div').hasClass('picker')){
 		$('.picker').farbtastic('#color');
 	}	
 	//------------- Datepicker -------------//
@@ -118,7 +118,7 @@ $(document).ready(function() {
 	        inline: true,
 			showOtherMonths:true
 	    });
-	}
+	}*/
 
 	//------------- Combined picker -------------//
 	if($('#combined-picker').length) {
@@ -184,7 +184,7 @@ $(document).ready(function() {
 
 });//End document ready functions
 
-//sparkline in sidebar area
+/*//sparkline in sidebar area
 var positive = [1,5,3,7,8,6,10];
 var negative = [10,6,8,7,3,5,1]
 var negative1 = [7,6,8,7,6,5,4]
@@ -231,5 +231,5 @@ $('#stat6').sparkline(positive, {
 	minSpotColor: '#f7941d',//The CSS colour of the marker displayed for the mimum value. Set to false or an empty string to hide it
 	spotRadius: 3,//Radius of all spot markers, In pixels (default: 1.5) - Integer
 	lineWidth: 2//In pixels (default: 1) - Integer
-});
+});*/
 
