@@ -1,16 +1,22 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Compte creation</h1>
-
-    {{ form_start(form) }}
+<div class="row-fluid centre">
+        <div class="span10">
+            <div class="widget-box">
+                <div class="widget-title"> <span class="icon"> <i class="fa fa-file-o"></i> </span>
+                    <h5>New Client</h5>
+                </div>
+                <div class="widget-content nopadding">
+<br>
+    <center>{{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+        <input type="submit" class="btn btn-success" value="Create" />
     {{ form_end(form) }}
 
-    <ul>
-        <li>
+<br>
             <a href="{{ path('compte_index') }}">Back to the list</a>
-        </li>
-    </ul>
+
+    </center>
+</div></div></div>
 {% endblock %}

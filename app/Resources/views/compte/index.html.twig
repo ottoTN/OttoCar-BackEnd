@@ -6,7 +6,7 @@
   <div class="widget-box">
           <div class="widget-title"> <span class="icon"><i class="fa fa-id-card-o"></i></span>
             <h5>All Accounts</h5>
-             <div style="padding-top: 0.2%"><a class="btn btn-info"  href="createCompteReceptionnist.html"><i class="fa fa-plus-circle"></i></a></div>
+             <div style="padding-top: 0.2%"><a class="btn btn-info"  href="{{ path('compte_new') }}"><i class="fa fa-plus-circle"></i></a></div>
           </div>
           <div class="widget-content nopadding">
             <table class="table table-bordere data-table">
@@ -21,6 +21,7 @@
                   <th>Car Brand</th>
                   <th>Car Version</th>
                   <th>Plate License</th>
+                  <th>Manage</th>
             </tr>
         </thead>
         <tbody>
@@ -36,14 +37,15 @@
                 <td>  {{ compte.marquevoit }} </td>
                 <td>  {{ compte.immatvoit }}</td>
                 <td>
-                    <ul>
+                <a class="btn btn-warning" href="{{ path('compte_show', { 'id': compte.id }) }}">Edit</a>
+                    <!-- <ul>
                         <li>
                             <a href="{{ path('compte_show', { 'id': compte.id }) }}">show</a>
                         </li>
                         <li>
                             <a href="{{ path('compte_edit', { 'id': compte.id }) }}">edit</a>
                         </li>
-                    </ul>
+                    </ul> -->
                 </td>
             </tr>
         {% endfor %}
@@ -51,10 +53,4 @@
             </table>
           </div>
     </div>
-
-    <ul>
-        <li>
-            <a href="{{ path('compte_new') }}">Create a new compte</a>
-        </li>
-    </ul>
 {% endblock %}
