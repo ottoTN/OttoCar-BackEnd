@@ -1,29 +1,31 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Employes list</h1>
-
-    <table>
+<div class="widget-box">
+          <div class="widget-title"> <span class="icon"><i class="fa fa-id-card-o"></i></span>
+            <h5>All Accounts</h5>
+             <div style="padding-top: 0.2%"><a class="btn btn-info"  href="createCompteReceptionnist.html"><i class="fa fa-plus-circle"></i></a></div>
+          </div>
+          <div class="widget-content nopadding">
+    <table class="table table-bordere data-table">
         <thead>
             <tr>
-                <th>Cinemp</th>
-                <th>Nomemp</th>
-                <th>Prenomemp</th>
-                <th>Statutsoc</th>
-                <th>Adresseemp</th>
-                <th>Datenaissemp</th>
-                <th>Telemp</th>
-                <th>Typeemp</th>
-                <th>Salaire</th>
-                <th>Statutemp</th>
-                <th>Id</th>
-                <th>Actions</th>
+                 <th>C.I.N</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Social Status</th>
+                  <th>Adress</th>
+                  <th>Date of birth</th>
+                  <th>Phone</th>
+                  <th>Type</th>
+                  <th>Salary</th>
+                  <th>Manage</th>
             </tr>
         </thead>
         <tbody>
         {% for employe in employes %}
             <tr>
-                <td><a href="{{ path('employe_show', { 'id': employe.id }) }}">{{ employe.cinemp }}</a></td>
+                <td>{{ employe.cinemp }}</a></td>
                 <td>{{ employe.nomemp }}</td>
                 <td>{{ employe.prenomemp }}</td>
                 <td>{{ employe.statutsoc }}</td>
@@ -33,7 +35,6 @@
                 <td>{{ employe.typeemp }}</td>
                 <td>{{ employe.salaire }}</td>
                 <td>{{ employe.statutemp }}</td>
-                <td>{{ employe.id }}</td>
                 <td>
                     <ul>
                         <li>
@@ -47,8 +48,9 @@
             </tr>
         {% endfor %}
         </tbody>
-    </table>
-
+            </table>
+          </div>
+    </div>
     <ul>
         <li>
             <a href="{{ path('employe_new') }}">Create a new employe</a>
