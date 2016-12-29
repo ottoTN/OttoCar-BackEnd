@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Employes list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Cinemp</th>
+                <th>Nomemp</th>
+                <th>Prenomemp</th>
+                <th>Statutsoc</th>
+                <th>Adresseemp</th>
+                <th>Datenaissemp</th>
+                <th>Telemp</th>
+                <th>Typeemp</th>
+                <th>Salaire</th>
+                <th>Statutemp</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for employe in employes %}
+            <tr>
+                <td><a href="{{ path('employe_show', { 'id': employe.id }) }}">{{ employe.cinemp }}</a></td>
+                <td>{{ employe.nomemp }}</td>
+                <td>{{ employe.prenomemp }}</td>
+                <td>{{ employe.statutsoc }}</td>
+                <td>{{ employe.adresseemp }}</td>
+                <td>{% if employe.datenaissemp %}{{ employe.datenaissemp|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ employe.telemp }}</td>
+                <td>{{ employe.typeemp }}</td>
+                <td>{{ employe.salaire }}</td>
+                <td>{{ employe.statutemp }}</td>
+                <td>{{ employe.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('employe_show', { 'id': employe.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('employe_edit', { 'id': employe.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('employe_new') }}">Create a new employe</a>
+        </li>
+    </ul>
+{% endblock %}

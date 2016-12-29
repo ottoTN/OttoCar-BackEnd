@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Comptes list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nomprop</th>
+                <th>Prenomprop</th>
+                <th>Telprop</th>
+                <th>Adresseprop</th>
+                <th>Mailprop</th>
+                <th>Modelevoit</th>
+                <th>Marquevoit</th>
+                <th>Immatvoit</th>
+                <th>Cinprop</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for compte in comptes %}
+            <tr>
+                <td><a href="{{ path('compte_show', { 'id': compte.id }) }}">{{ compte.nomprop }}</a></td>
+                <td>{{ compte.prenomprop }}</td>
+                <td>{{ compte.telprop }}</td>
+                <td>{{ compte.adresseprop }}</td>
+                <td>{{ compte.mailprop }}</td>
+                <td>{{ compte.modelevoit }}</td>
+                <td>{{ compte.marquevoit }}</td>
+                <td>{{ compte.immatvoit }}</td>
+                <td>{{ compte.cinprop }}</td>
+                <td>{{ compte.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('compte_show', { 'id': compte.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('compte_edit', { 'id': compte.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('compte_new') }}">Create a new compte</a>
+        </li>
+    </ul>
+{% endblock %}
