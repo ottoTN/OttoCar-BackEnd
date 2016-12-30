@@ -15,8 +15,9 @@
 <link rel="stylesheet" href="{{ asset('css/jquery.gritter.css')}}" />
 <link rel="stylesheet" href="{{ asset('css/widgets.min.css')}}"/>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ asset('css/bootstrap-toggle.min.css')}}"/>
 
- <title>{% block title %}Welcome!{% endblock %}</title>
+ <title>{% block title %}OttoCar!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
 </head>
 <body>
@@ -115,6 +116,19 @@
 <script src="{{ asset('js/matrix.js')}}"></script> 
 <script src="{{ asset('js/matrix.tables.js')}}"></script>
 <script src="{{ asset('js/masked.js')}}"></script> 
+<script src="{{ asset('js/bootstrap-toggle.min.js')}}"></script>
+<script type="text/javascript">
+  $('#payInvoice').click(function (){
+    $('#invoiceStatus1').empty();
+    $( "#invoiceStatus1" ).append( '<div class="toggle btn btn-default on" data-toggle="toggle" disabled="disabled" style="width: 50px; height: 25px;"><input type="checkbox" checked disabled="" data-toggle="toggle" data-on="Paid" data-off="Unpaid" data-onstyle="success" data-width="50" data-height="25"><div class="toggle-group"><label class="btn btn-success toggle-on" style="line-height: 34px;">Paid</label><label class="btn btn-default active toggle-off" style="line-height: 34px;">Unpaid</label><span class="toggle-handle btn btn-default"></span></div></div>' );
+    
+    $('#payInvoice').attr("disabled","disabled");
+    $('#payInvoice').html("Paid");
+    $('#cost').html('70,00 TND');
+    $('#addFacture').modal('hide');
+
+  });
+</script>
 <script type="text/javascript">
 $("#garagebundle_compte_immatvoit").mask("999 TUN 9999");
 </script>
