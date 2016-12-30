@@ -27,6 +27,17 @@ class FicheController extends Controller
         ));
     }
 
+    public function indexworkerAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $fiches = $em->getRepository('GarageBundle:Fiche')->findAll();
+
+        return $this->render('fiche/index-worker.html.twig', array(
+            'fiches' => $fiches,
+        ));
+    }
+
     /**
      * Creates a new fiche entity.
      *

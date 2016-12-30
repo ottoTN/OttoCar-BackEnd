@@ -37,6 +37,10 @@ garage_stock:
 garage_utilisateur:
     resource: "@GarageBundle/Resources/config/routing/utilisateur.php"
     prefix:   /utilisateur
+
+garage_fiche:
+    resource: "@GarageBundle/Resources/config/routing/fiche.php"
+    prefix:   /fiche    
     
 garage_homepage:
     path:     /Garage/hello

@@ -308,6 +308,17 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 }
                 not_fiche_index:
 
+                // fiche_indexworker
+                if ($pathinfo === '/fiche/indexworker') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_fiche_indexworker;
+                    }
+
+                    return array (  '_controller' => 'GarageBundle\\Controller\\FicheController::indexworkerAction',  '_route' => 'fiche_indexworker',);
+                }
+                not_fiche_indexworker:
+
                 // fiche_show
                 if (preg_match('#^/fiche/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
                     if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {

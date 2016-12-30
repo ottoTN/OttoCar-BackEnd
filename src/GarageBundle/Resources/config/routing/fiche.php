@@ -15,6 +15,16 @@ $collection->add('fiche_index', new Route(
     array('GET')
 ));
 
+$collection->add('fiche_indexworker', new Route(
+    '/indexworker',
+    array('_controller' => 'GarageBundle:Fiche:indexworker'),
+    array(),
+    array(),
+    '',
+    array(),
+    array('GET')
+));
+
 $collection->add('fiche_show', new Route(
     '/{id}/show',
     array('_controller' => 'GarageBundle:Fiche:show'),
